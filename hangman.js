@@ -19,6 +19,7 @@ function guessLetter() {
     }
     guesses += letter;
     updatePage();
+    input.value = "";
 }
 function updatePage() {
     var clueString = "";

@@ -37,8 +37,19 @@ function guessLetter() {
     guesses += letter;
     input.value = ""; // Clear input
     updatePage();
-    
+    checkGameStatus();
 }
+function checkGameStatus() { // New function to check if game is won or lost
+    var guessArea = document.getElementById("guesses");
+    var wordComplete = true; // Check if word is completely guessed
+    for (var i = 0; i < word.length; i++) {
+        if (guesses.toUpperCase().indexOf(word.charAt(i).toUpperCase()) < 0) {
+            wordComplete = false;
+            break;
+        }
+}
+}
+
 function updatePage() {
     var clueString = "";
     for (var i = 0; i < word.length; i++) {

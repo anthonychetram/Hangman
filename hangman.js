@@ -40,7 +40,7 @@ function guessLetter() {
     checkGameStatus();
 }
 function checkGameStatus() { // New function to check if game is won or lost
-    var guessArea = document.getElementById("guesses");
+     guessArea.innerHTML = document.getElementById("guesses");
     var wordComplete = true; // Check if word is completely guessed
     for (var i = 0; i < word.length; i++) {
         if (guesses.toUpperCase().indexOf(word.charAt(i).toUpperCase()) < 0) {
@@ -66,5 +66,5 @@ function updatePage() {
     var guessArea = document.getElementById("guesses");
     guessArea.innerHTML = "Guessed letters: " + guesses;
     var image = document.getElementById("hangmanImage");
-    image.src = "images/hangman" + guess_count + ".gif";
+    image.src = "hangman" + guess_count + ".gif";
 }

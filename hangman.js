@@ -17,13 +17,27 @@ function newGame() {
 }
 function guessLetter() {
     var input = document.getElementById("guess");
-    var letter = input.value;
-    if(word.indexOf(letter) < 0){
+    var letter = input.value.toUpperCase(); // make case insensitive    
+        if (gameStarted) {
+        input.value = ""; // Clear input
+        return;
+    }   
+        if (gameFinished) { //No more guesses if game is finished
+        input.value = ""; // Clear input
+        return;
+    } 
+        if (guesses.toUpperCase().indexOf(letter) >= 0) {
+        alert("You already guessed that letter!"); // Added alert for already guessed letter
+        input.value = ""; // Clear input
+        return;
+    }
+        if(word.toUpperCase.indexOf(letter) < 0){
         guess_count--;
     }
     guesses += letter;
+    input.value = ""; // Clear input
     updatePage();
-    input.value = "";
+    
 }
 function updatePage() {
     var clueString = "";

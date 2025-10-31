@@ -3,12 +3,16 @@ var word = "";
 var guesses = "";
 var MAX_GUESSES = 6;
 var guess_count = MAX_GUESSES;
+var gameFinished = false; // Added variable to track if the game is finished
+var gameStarted = false; // Added variable to track if the game has started
 
 function newGame() {
-    var randomIndex = (Math.random() * POSSIBLE_WORDS.length);
+    var randomIndex = Math.floor(Math.random() * POSSIBLE_WORDS.length); // FIXED: Added Math.floor
     word = POSSIBLE_WORDS[randomIndex];
     guesses = "";
     guess_count = MAX_GUESSES;
+    gameFinished = false; // Reset game finished status
+    gameStarted = true; // Set game started status   
     updatePage();
 }
 function guessLetter() {

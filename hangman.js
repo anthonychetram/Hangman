@@ -33,6 +33,11 @@ function guessLetter() {
         input.value = ""; // Clear input
         return;
     }
+        if (letter === "" || !/[A-Z]/.test(letter)) { // Validate input
+    alert("Please enter a valid letter!");
+    input.value = "";
+    return;
+}
         if(word.toUpperCase.indexOf(letter) < 0){
         guess_count--;
     }

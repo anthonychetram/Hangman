@@ -13,6 +13,9 @@ function newGame() {
     guess_count = MAX_GUESSES;
     gameFinished = false; // Reset game finished status
     gameStarted = true; // Set game started status   
+    var dialog = document.getElementById("dialog"); // Get dialog element
+    dialog.className = "dialog"; // Hide dialog
+    dialog.textContent = ""; // Clear dialog text
     updatePage();
 }
 function guessLetter() {

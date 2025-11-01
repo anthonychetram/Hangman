@@ -48,6 +48,8 @@ function guessLetter() {
 }
 function checkGameStatus() { // New function to check if game is won or lost
      guessArea.innerHTML = document.getElementById("guesses");
+     var dialog = document.getElementById("dialog"); // Get dialog element
+    var guessedLetters = document.getElementById("guessedLetters"); // Get guessed letters element
     var wordComplete = true; // Check if word is completely guessed
     for (var i = 0; i < word.length; i++) {
         if (guesses.toUpperCase().indexOf(word.charAt(i).toUpperCase()) < 0) {
@@ -55,7 +57,18 @@ function checkGameStatus() { // New function to check if game is won or lost
             break;
         }
 }
+        if (wordComplete) { gameFinished = true; 
+        dialog.textContent = " Congratulations! You Won!"; 
+        dialog.className = "dialog win show"; 
+        guessedLetters.textContent = "Guessed letters: " + guesses; 
+    }
+        else if (guess_count <= 0) { gameFinished = true; 
+        dialog.textContent = " Game Over! The word was: " + word; 
+        dialog.className = "dialog lose show"; 
+        guessedLetters.textContent = "Guessed letters: " + guesses; 
+    }
 }
+    
 
 function updatePage() {
     var clueString = "";

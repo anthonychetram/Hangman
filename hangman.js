@@ -38,7 +38,7 @@ function guessLetter() {
     input.value = "";
     return;
 }
-        if(word.toUpperCase.indexOf(letter) < 0){
+        if(word.toUpperCase().indexOf(letter) < 0){
         guess_count--;
     }
     guesses += letter;

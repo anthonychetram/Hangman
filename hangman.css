@@ -10,3 +10,24 @@ body{
 #newgamearea{
     margin-top: 2em;
 }
+.dialog {
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px 0;
+    font-weight: bold;
+    display: none;
+}
+
+.dialog.win {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.dialog.lose {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.dialog.show {
+    display: block;
+}

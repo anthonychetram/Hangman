@@ -17,8 +17,10 @@ function newGame() {
 }
 function guessLetter() {
     var input = document.getElementById("guess");
-    var letter = input.value.toUpperCase(); // make case insensitive    
-        if (gameStarted) {
+    var letter = input.value.toUpperCase(); // make case insensitive 
+        // Added the ! which checks if the game hasn't started yet   
+        if (!gameStarted) {
+        alert("Please start a new game first!");
         input.value = ""; // Clear input
         return;
     }   
